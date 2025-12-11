@@ -1,6 +1,13 @@
 [workspace]
 resolver = "2"
-members = ["app", "cli", "integration_tests", "lib", "rpc-api"]
+members = [
+    "app",
+    "cli",
+    "integration_tests",
+    "lib",
+    "rpc-api",
+    "ltc_mainchain_adapter",    # <— added
+]
 
 [workspace.package]
 authors = ["Ash Manning <ash@layertwolabs.com>"]
@@ -38,6 +45,13 @@ tracing-subscriber = "0.3.18"
 url = "2.5.4"
 utoipa = { version = "5.2.0", default-features = false }
 uuid = "1.13.1"
+
+# NEW: workspace deps for Litecoin adapter
+bitcoincore-rpc = "0.18"
+tokio-stream    = "0.1.17"
+prost-types     = "0.13.3"
+tonic-build     = "0.12.3"
+zmq             = "0.10"
 
 [workspace.dependencies.bip300301_enforcer_lib]
 default-features = false
